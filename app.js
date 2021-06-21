@@ -2,6 +2,8 @@ const express = require('express');
 const session=require('express-session');
 const MongodbSession=require('connect-mongodb-session')(session);
 
+const port=process.env.PORT || 3000;
+
 const URI='mongodb+srv://swaroop:Swaroop@123@cluster0.jndjv.mongodb.net/ToDoList?retryWrites=true&w=majority';
 
 const bodyParser = require('body-parser');
@@ -34,7 +36,7 @@ app.use('/', (req, res, next) => {
     res.redirect('/login');
 })
 
-app.listen(3000, (res, err) => {
+app.listen(port, (res, err) => {
     if (err) {
         console.log('err');
     }
