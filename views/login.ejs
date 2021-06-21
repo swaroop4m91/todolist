@@ -1,0 +1,13 @@
+<%- include('head')-%>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <form class="login" action="/login" method="POST">
+        <label>ENTER EMAIL ID</label>
+        <input type="text" name="email" required>
+        <label>ENTER PASSWORD</label>
+        <input type="text" name="password" required>
+        <button type="submit">LOGIN</button>
+        <section>Not a user?   <a href="/signup">signup</a></section>
+    </form>
+<%- include('fotter')-%>

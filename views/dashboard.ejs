@@ -1,0 +1,91 @@
+<%- include('head')-%>
+<style>
+    body{
+        background-color: skyblue;
+    }
+    .todolist{
+        display: block;
+        padding: 10px;
+        text-align: center;
+        color:whitesmoke;
+        background-color: black;
+        border: 8px;
+        margin: 5px;
+        font-size: 1.5rem;
+        margin-left: 15%;
+        margin-right: 15%;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+    .logout{
+        display:block;
+        background-color:whitesmoke;
+        color: black;
+        padding: 10px;
+        text-align: right;
+        overflow: auto;
+        border-radius: 8px;
+    }
+    .logout a{
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: black;
+        
+    }
+    .logout span{
+        float: left;
+        padding-left: 2rem;
+        font-size: 2rem;
+        color: royalblue;
+    }
+    .logout a:hover{
+        color: tomato;
+    }
+    .addtask{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+       
+    }
+    .addtask label{
+        font-size: 1.8rem;
+        padding-left:4px; ;
+    }
+    .addtask input{
+        padding: 10px;
+        margin: 10px;
+        border: 2px black;
+        border-radius: 5px;
+        width: 55%;
+    }
+    .addtask button{
+        margin: 5px;
+        margin-left: 10px;
+        width: 2rem;
+        text-align: center;
+    }
+</style>
+    </head>
+
+    <body>
+        <div class="logout">
+            <span>TODoList</span>
+            <a href="/logout">LogOut</a>
+        </div>
+        <div>
+            <form class="addtask" action="/dashboard/<%=id%>" method="POST">
+                <label>Enter the task</label>
+                <input type="text" name="task" required>
+                <button type="submit">+</button>
+            </form>
+        </div>
+        <% if(hasTasks.length>0) {%>
+      <% for(let i=0;i<hasTasks.length;i++) {%>
+        <div class="todolist"><%=hasTasks[i]%></div>
+      <%}%>
+      <%}%>
+<%- include('fotter')-%>
+    

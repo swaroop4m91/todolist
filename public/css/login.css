@@ -1,0 +1,26 @@
+.login{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin-top: 10rem;
+    z-index: 100;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 65px;
+}
+.login button{
+    width: 4rem;
+}
+.login  input{
+    padding: 4px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.login section{
+    margin-top: 10px;
+}
+body{
+    background-color: lightskyblue;
+}
